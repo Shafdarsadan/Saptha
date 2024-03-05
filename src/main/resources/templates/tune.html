@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/tune.css}">
+</head>
+<body>
+
+	<nav>
+		<div id="d1">
+			<div id="div1">
+				<b>Global</b>
+			</div>
+			<div id="div1">
+				<b>Region</b>
+				<div id="arrow">
+					<i class="fa fa-chevron-down" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+		<div id="d2">
+			<div id="div">logout</div>
+			<div id="div"></div>
+		</div>
+	</nav>
+
+	<div id="d5">
+		<div id="d12">
+			<b>Latest Songs</b>
+		</div>
+
+		<div id="d122">
+
+			<div id="d1222" class="container">
+				<!-- Song elements will be dynamically rendered here -->
+				<div id="d12222" class="song" th:each="song : ${songs}">
+					<h2 th:text="${song.name}"></h2>
+					<p th:text="${song.artist}"></p>
+					<p th:text="${song.genre}"></p>
+					<!-- Add more song details here -->
+					<div id="d123">
+						<audio controls>
+							<source th:src="${song.link}">
+						</audio>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>
